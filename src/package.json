@@ -1,0 +1,11 @@
+{
+  "name": "slyder-node",
+  "version": "0.0.0",
+  "description": "A product site",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jackson Murphy",
+  "license": "MIT"
+}
