@@ -26,6 +26,14 @@ app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
 
 
+// /// ROUTES
+
+
+// // Route to the home page
+// app.get('/', function(req, res) {
+//     res.render('home');
+// });
+
 
 /// ERROR HANDLERS
 
