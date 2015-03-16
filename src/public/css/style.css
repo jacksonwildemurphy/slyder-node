@@ -11,31 +11,10 @@ body {
 
 }
 
-/* the two selectors below are obeyed by the navbar li a {
 
-    color: #fff !important;
 
-}
 
-li a:hover {
 
-    color: #e8643e !important;
-
-}
-
-*/ 
-
-/* Trying to make navbar links white... */
-
-/* One way (from StackOverflow) */
-.navbar .nav > li > a { color: #fff; }
-
-<!-- Another way -->
-html body header .navbar .navbar-inverse .collapse .navbar-collapse .container-fluid .nav .navbar-nav .navbar-right li a {
-
-    color: #fff;
-
-}
 
 strong {
 
@@ -91,49 +70,8 @@ img {
 
 }
 
-/***** Top menu *****/
+/***** Navbar *****/
 
-<!-- nav {
-
-    display: none;
-
-    position: absolute;
-
-    <!-- for fixed navbar, change to"fixed" top: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    z-index: 998;
-
-    background: #5e5e5e;
-
-    font-size: 18px;
-
-    color: #fff;
-
-    line-height: 32px;
-
-    text-align: center;
-
-}
-
---> .navbar {
-
-    background-color: transparent;
-
-    background: transparent;
-
-    border-color: transparent;
-
-}
-
-.navbar li {
-
-    color: #5e5e5e
-
-}
 
 nav a {
 
@@ -147,11 +85,6 @@ nav a {
 
 }
 
-nav a:hover {
-
-    color: #e8643e;
-
-}
 
 nav a:focus {
 
@@ -159,11 +92,33 @@ nav a:focus {
 
 }
 
-.menu-contact li {
 
-    color: #e8643e;
+.navbar .nav > li > a { 
+    
+    color: #fff; 
+    
+    padding-top: 20px;
+}
+
+
+.navbar .nav > li > a:hover { color: #e8643e }
+
+
+.navbar {
+
+    background-color: transparent;
+
+    background: transparent;
+
+    border-color: transparent;
 
 }
+
+.navbar-brand {
+    
+    margin-top: -10px;
+}
+
 
 /***** Header ******/
 
@@ -205,7 +160,7 @@ header {
 
 .inner-bg {
 
-    padding: 5px 0 30px 0; <!-- changed top to 5 from 75 -->
+    padding: 5px 0 30px 0; /* changed top to 5 from 75 */
 
 }
 
