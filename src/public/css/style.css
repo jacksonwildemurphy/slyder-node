@@ -11,7 +11,7 @@ body {
 
 }
 
-<!-- the two selectors below are obeyed by the navbar li a {
+/* the two selectors below are obeyed by the navbar li a {
 
     color: #fff !important;
 
@@ -23,11 +23,11 @@ li a:hover {
 
 }
 
---> 
+*/ 
 
-<!-- Trying to make navbar links white... --> 
+/* Trying to make navbar links white... */
 
-<!-- One way (from StackOverflow) -->
+/* One way (from StackOverflow) */
 .navbar .nav > li > a { color: #fff; }
 
 <!-- Another way -->
@@ -190,6 +190,8 @@ header {
     -o-background-size: cover;
 
 }
+
+/***** Video Player ****/
 
 /***** Coming Soon *****/
 

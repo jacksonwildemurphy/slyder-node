@@ -88,7 +88,7 @@
                             </div>
                             <h2>Building tools for better breathing.</h2>
                             <!-- Add space to expand the splash page -->
-                        
+
                             <br>
                             <p class="top-arrow">
                                 <i class="fa fa-chevron-down"></i>
@@ -99,6 +99,64 @@
             </div>
         </div>
     </header>
+
+    <!-- Video player -->
+    <div class="jumbotron">
+        <style type="text/css">
+            .jumbotron {
+                padding: 0;
+                margin-bottom: 0;
+            }
+            
+            .videoControls {
+                width: 80%;
+                font-size: 30px;
+            }
+            
+            .videoControls span, .videoControls div {
+                display: inline-block;
+                color: #999;
+            }
+            
+            .btnMute, .btnFullscreen {
+                float: right;
+                padding-left: 20px;
+                margin-right: 20px;
+                color: #999;
+            }
+            
+            .btnFullscreen {
+                font-size: 23px;
+                padding-top: 5px;
+            }
+            
+            .btnPlay {
+                padding-right: 20px;
+                margin-left: 20px;
+                color: #999;    
+            }
+            
+            .glyphicon:hover {
+                color: #555;
+            }
+            
+            
+            
+            
+        </style>
+        <video width="90%" height="90%" id="videoPlayer">
+            <source src="video/moon.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+        </video>
+        <div class="videoControls">
+            <a href="#" class="btnPlay"><span class="glyphicon glyphicon-play"></span></a>
+            <div class="videoTime">
+                <span class="current"></span>/<span class="duration"></span>
+            </div>
+            <a href="#" class="btnMute"><span class="glyphicon glyphicon-volume-up"></span></a>
+            <a href="#" class="btnFullscreen"><span class="glyphicon glyphicon-fullscreen"></span></a>
+        </div>
+    </div>
 
     <!-- Subscription form -->
     <div class="container">
@@ -349,6 +407,7 @@
     <!--[if lt IE 10]>
             <script src="js/placeholder.js"></script>
         <![endif]-->
+
 
 </body>
 
