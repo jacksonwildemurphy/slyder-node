@@ -67,8 +67,6 @@ jQuery(document).ready(function () {
         Video Player
     */
        
-
-
     var videoPlayer = $('#videoPlayer');
     $('.btnPlay').click(function () {
         if (videoPlayer[0].paused) {
@@ -129,8 +127,8 @@ jQuery(document).ready(function () {
 	    Show latest tweets
 	*/
 
-    /* Omit the tweet feature for now... 
-
+    /* 
+        Omit the tweet feature for now...  
     */
 
     /*

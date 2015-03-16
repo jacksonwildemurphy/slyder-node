@@ -148,6 +148,45 @@ header {
 
 /***** Video Player ****/
 
+.jumbotron {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.videoControls {
+    width: 80%;
+    font-size: 30px;
+}
+
+.videoControls span, .videoControls div {
+    display: inline-block;
+    color: #999;
+}
+
+.btnMute, .btnFullscreen {
+    float: right;
+    padding-left: 20px;
+    margin-right: 20px;
+    color: #999;
+}
+
+.btnFullscreen {
+    font-size: 23px;
+    padding-top: 5px;
+}
+
+.btnPlay {
+    padding-right: 20px;
+    margin-left: 20px;
+    color: #999;    
+}
+
+.glyphicon:hover {
+    color: #555;
+}
+
+
+
 /***** Coming Soon *****/
 
 .coming-soon {
@@ -166,7 +205,7 @@ header {
 
 .coming-soon .logo {
 
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 
 }
 
@@ -190,28 +229,9 @@ header {
 
 }
 
-.coming-soon .logo a:focus {
-
-    outline: 0;
-
-}
-
-.coming-soon .logo a:before {
-
-    content: url(../img/logo-hover.png);
-
-    width: 0;
-
-    height: 0;
-
-    visibility: hidden;
-
-}
-
-.coming-soon .logo a:hover {
-
-    background-image: url(../img/logo-hover.png);
-
+.coming-soon .motto {
+    
+    margin-top: -70px;
 }
 
 .coming-soon h2 {
