@@ -150,6 +150,7 @@ header {
 
 .jumbotron {
     padding: 0;
+    padding-top: 80px;
     margin-bottom: 0;
 }
 
@@ -330,6 +331,41 @@ header {
 
     top: 10px;
 
+}
+
+/***** Our Story ****/
+
+.our-story {
+
+    margin-top: 60px;
+    
+    margin-bottom: 50px;
+
+    text-align: center;
+
+}
+
+.our-story h3 {
+ 
+    font-size: 46px;
+
+    font-weight: 100;
+
+    color: #555;
+
+    line-height: 50px;
+    
+}
+
+.our-story p {
+    
+    margin-top: 30px;
+
+    font-size: 22px;
+
+    color: #888;
+
+    line-height: 36px;
 }
 
 /***** Subscription form *****/
