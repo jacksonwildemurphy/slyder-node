@@ -55,8 +55,10 @@ jQuery(document).ready(function () {
     */
     //$('.coming-soon').backstretch("img/backgrounds/slc-splash.png");
 
-    $('.about-container').backstretch("img/backgrounds/steel-gray.jpg");
-
+    $('.jumbotron').backstretch("img/backgrounds/steel-gray.jpg");
+    
+    $('.about-container').backstretch("img/backgrounds/light_blue.jpg");
+    
     $('.whos-behind-container').backstretch("img/backgrounds/light_blue.jpg");
 
 
