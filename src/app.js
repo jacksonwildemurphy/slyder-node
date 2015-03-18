@@ -3,6 +3,7 @@
 var express = require("express");
 var app = express();
 var credentials = require("./credentials.js");
+var isValidEmail = require("./lib/validate-email.js");
 app.set("port", process.env.PORT || 3000);
 
 
@@ -48,13 +49,7 @@ switch (app.get("env")) {
 var Subscriber = require("./models/subscription.js");
 
 // Test: Adding a sample subscriber to the database
-new Subscriber({
-    email: "jacksonmurphy1@gmail.com",
-    date: new Date(),
-    asthmatic: true,
-    relative: false,
-    investor: false
-}).save();
+
 
 console.log("Success");
 
@@ -77,20 +72,28 @@ app.get("/", function(req, res) {
 // Route for the subscription-form submission
 app.post("/process-subscription", function(req, res) {
     // TODO Save data to database and/or do other processing here
+    var success = false;
 
-    // Check whether email address is valid
-
-
-    console.log("Email: " + req.body.email);
+    // Add subscriber to the database if the email is valid
+    if (isValidEmail(req.body.email)) {
+        success = true;
+        new Subscriber({
+            email: req.body.email,
+            date: new Date(),
+            asthmatic: true, // TODO: checkboxes
+            relative: false,
+            investor: false
+        }).save();
+    }
 
     // Check whether browser prefers to receive JSON or HTML
     if (req.xhr || req.accepts("json,html") === "json") {
         // TODO If there was a db error, send {error: "error description"}
         // If there was not a db error:
         res.send({
-            success: true
+            success: success
         });
-    } else {
+    } else { // fallback if AJAX doesn't work
         // TODO: If there was a db error, send and error msg or redirect to error page
         // If there was not a db error:
         res.redirect(303, '/');
