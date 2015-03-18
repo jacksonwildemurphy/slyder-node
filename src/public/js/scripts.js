@@ -160,25 +160,26 @@ jQuery(document).ready(function () {
         var postdata = $('.subscribe form').serialize();
         $.ajax({
             type: 'POST',
-            url: 'assets/subscribe.php',
+            url: '/process-subscription',
             data: postdata,
             dataType: 'json',
-            success: function (json) {
-                if (json.valid == 0) {
+            success: function (data) {
+                if (data.success == 0) {
                     $('.success-message').hide();
                     $('.error-message').hide();
-                    $('.error-message').html(json.message);
+                    $('.error-message').html('Oops! There was a problem... Please try again.');
                     $('.error-message').fadeIn();
                 } else {
                     $('.error-message').hide();
                     $('.success-message').hide();
                     $('.subscribe form').hide();
-                    $('.success-message').html(json.message);
+                    $('.success-message').html('Thank you!');
                     $('.success-message').fadeIn();
                 }
             }
         });
     });
+
 
     /*
 	    Contact form
@@ -192,7 +193,7 @@ jQuery(document).ready(function () {
         var postdata = $('.contact-form form').serialize();
         $.ajax({
             type: 'POST',
-            url: 'assets/contact.php',
+            url: '/process-contact',
             data: postdata,
             dataType: 'json',
             success: function (json) {

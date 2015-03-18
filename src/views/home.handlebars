@@ -141,7 +141,7 @@ This driving motivation to reinvent the relationship and interaction one has wit
                 <div class="col-sm-12 subscribe">
                     <h3>Subscribe to our newsletter!</h3>
                     <p>If you're an asthmatic, or a parent/relative of one, we need your help! We're currently looking for product feedback on the Slyder, as well as insight and feedback from parents and caregivers. <a>Help us co-create here.</a> To stay up to date with our progress and hear about important events, please subscribe to our newsletter.</p>
-                    <form class="form-inline" role="form" action="assets/subscribe.php" method="post">
+                    <form class="form-inline" role="form" action="/process-subscription" method="POST">
                         <div class="form-group">
                             <label class="sr-only" for="subscribe-email">Email address</label>
                             <input type="text" name="email" placeholder="Enter your email..." class="subscribe-email" id="subscribe-email">
@@ -327,7 +327,7 @@ This driving motivation to reinvent the relationship and interaction one has wit
         <div class="row">
             <div class="col-sm-7 contact-form">
                 <h4>Send us a message</h4>
-                <form role="form" action="assets/contact.php" method="post">
+                <form role="form" action="process-contact" method="post">
                     <div class="form-group">
                         <label class="sr-only" for="contact-email">Email</label>
                         <input type="text" name="email" placeholder="Your email address..." class="contact-email" id="contact-email">
@@ -342,6 +342,8 @@ This driving motivation to reinvent the relationship and interaction one has wit
                     </div>
                     <button type="submit" class="btn">Send</button>
                 </form>
+                <div class="contact-error-message"></div>
+                <div class="contact-success-message"></div>
             </div>
             <div class="col-sm-5 contact-address">
                 <h4>Come visit us</h4>

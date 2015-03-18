@@ -1,4 +1,4 @@
-// **This file is the entry point for the Liyen website**
+/* This file is the entry point for the Liyen website */
 
 var express = require('express');
 var app = express();
@@ -25,14 +25,62 @@ app.set('view engine', 'handlebars');
 // Add the 'static' middleware
 app.use(express.static(__dirname + '/public'));
 
+// Add the body parser for handling form submissions
+app.use(require("body-parser")());
+
 
 /// ROUTES
 
 
 // Route to the home page
-app.get('/', function(req, res) {
-    res.render('home');
+app.get("/", function(req, res) {
+    res.render("home");
 });
+
+// Route for the subscription-form submission
+app.post("/process-subscription", function(req, res) {
+    // TODO Save data to database and/or do other processing here
+
+    console.log("Email: " + req.body.email);
+
+    // Check whether browser prefers to receive JSON or HTML
+    if (req.xhr || req.accepts("json,html") === "json") {
+        // TODO If there was a db error, send {error: "error description"}
+        // If there was not a db error:
+        res.send({
+            success: true
+        });
+    } else {
+        // TODO: If there was a db error, send and error msg or redirect to error page
+        // If there was not a db error:
+        res.redirect(303, '/');
+    }
+
+});
+
+// Route for the contact-form submission
+app.post("/process-contact", function(req, res) {
+    // TODO: Save data to database and/or do other processing here
+
+    console.log("Email: " + req.body.email);
+    console.log("Subject: " + req.body.subject);
+    console.log("Message: " + req.body.message);
+
+    // Check whether browser prefers to receive JSON or HTML
+    if (req.xhr || req.accepts("json,html") === "json") {
+        // TODO: If there was a db error, send {error: "error description"}
+        // If no error:
+        res.send({
+            emailMessage: "",
+            subjectMessage: "",
+            messageMessage: ""
+        });
+    } else {
+        // TODO: If there was a db error, send and error msg or redirect to error page
+        // If no db error:
+        res.redirect(303, '/');
+    }
+})
 
 
 /// ERROR HANDLERS
