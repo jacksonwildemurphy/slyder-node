@@ -1,8 +1,9 @@
 /* This file is the entry point for the Liyen website */
 
-var express = require('express');
+var express = require("express");
 var app = express();
-app.set('port', process.env.PORT || 3000);
+var credentials = require("./credentials.js");
+app.set("port", process.env.PORT || 3000);
 
 
 // Set up the handlebars view engine, set the layout to main.handlebars, and
@@ -20,6 +21,42 @@ var handlebars = require('express3-handlebars')
     });
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
+
+
+// Connect to our database
+var mongoose = require("mongoose");
+var options = {
+    server: {
+        socketOptions: {
+            keepAlive: 1 // helps prevent connection errors
+        }
+    }
+};
+
+switch (app.get("env")) {
+    case "development":
+        mongoose.connect(credentials.mongo.development.connectionString, options);
+        break;
+    case "production":
+        mongoose.connect(credentials.mongo.production.connectionString, options);
+        break;
+    default:
+        throw new Error("Unknown execution environment: " + app.get("env"));
+}
+
+// Import database models
+var Subscriber = require("./models/subscription.js");
+
+// Test: Adding a sample subscriber to the database
+new Subscriber({
+    email: "jacksonmurphy1@gmail.com",
+    date: new Date(),
+    asthmatic: true,
+    relative: false,
+    investor: false
+}).save();
+
+console.log("Success");
 
 
 // Add the 'static' middleware
@@ -40,6 +77,9 @@ app.get("/", function(req, res) {
 // Route for the subscription-form submission
 app.post("/process-subscription", function(req, res) {
     // TODO Save data to database and/or do other processing here
+
+    // Check whether email address is valid
+
 
     console.log("Email: " + req.body.email);
 
