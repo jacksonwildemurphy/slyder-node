@@ -11,7 +11,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,300,100,100italic,300italic,400italic,700,700italic">
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-multiselect/bs-multiselect.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
     <link rel="stylesheet" href="css/form-elements.css">
     <link rel="stylesheet" href="ultimate-flat-social-icons/ultm-css/ultm.css">
     <link rel="stylesheet" href="css/style.css">
@@ -108,11 +110,11 @@
             <div class="col-sm-12 our-story">
                 <h3>Our Story</h3>
                 <p>
-                    Chris Ciancone, an outdoor enthusiast with a passion for inventing cool products, was bedridden in the hospital and staring at his inhaler when the vision struck. As a lifelong asthmatic, Chris was fed up with his inhaler and spacer's poor design, cumbersome size, and lack of portability – especially while playing in the great outdoors. After talking with fellow asthmatics and inhaler users, he knew he wasn't alone and decided to take action.
-   </p>
-<br>
+                    Chris Ciancone, an outdoor enthusiast with a passion for inventing cool products, was bedridden in the hospital and staring at his inhaler when the vision struck. As a lifelong asthmatic, Chris was fed up with his inhaler and spacer's poor design, cumbersome size, and lack of portability – especially while playing in the great outdoors. After talking with fellow asthmatics and inhaler users, he knew he wasn't alone and decided to take action.    
+                </p>
+                <br>
                 <p>
-This driving motivation to reinvent the relationship and interaction one has with their inhaler would serve as the founding inspiration to start LIYEN Inc. After two years of research, prototyping, countless all-nighters, and many conversations with physicians, respiratory therapists, and asthmatics alike, Team LIYEN's dedicated passion for a better breathing experience has culminated into a pipeline of respiratory gear. Their first product is a revolutionary alternative to the current inhaler spacer – the Slyder. 
+                    This driving motivation to reinvent the relationship and interaction one has with their inhaler would serve as the founding inspiration to start LIYEN Inc. After two years of research, prototyping, countless all-nighters, and many conversations with physicians, respiratory therapists, and asthmatics alike, Team LIYEN's dedicated passion for a better breathing experience has culminated into a pipeline of respiratory gear. Their first product is a revolutionary alternative to the current inhaler spacer – the Slyder. 
                 </p>
             </div>
         </div>
@@ -143,6 +145,11 @@ This driving motivation to reinvent the relationship and interaction one has wit
                     <p>If you're an asthmatic, or a parent/relative of one, we need your help! We're currently looking for product feedback on the Slyder, as well as insight and feedback from parents and caregivers. <a>Help us co-create here.</a> To stay up to date with our progress and hear about important events, please subscribe to our newsletter.</p>
                     <form class="form-inline" role="form" action="/process-subscription" method="POST">
                         <div class="form-group">
+                            <select id="multiple-selection" name="multiselect[]" multiple="multiple">
+                                <option value="1">Asthmatic</option>
+                                <option value="2">Parent of an asthmatic</option>
+                                <option value="3">Investor</option>
+                            </select>
                             <label class="sr-only" for="subscribe-email">Email address</label>
                             <input type="text" name="email" placeholder="Enter your email..." class="subscribe-email" id="subscribe-email">
                         </div>
@@ -375,9 +382,10 @@ This driving motivation to reinvent the relationship and interaction one has wit
     </footer>
 
 
-    <!-- Javascript -->
+    <!-- JavaScript -->
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap-multiselect/bs-multiselect.js"></script>
     <script src="js/jquery.backstretch.min.js"></script>
     <script src="js/jquery.countdown.min.js"></script>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>

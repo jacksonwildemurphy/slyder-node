@@ -37,8 +37,7 @@ input[type="text"]:-moz-placeholder, textarea:-moz-placeholder { color: #888; }
 input[type="text"]:-ms-input-placeholder, textarea:-ms-input-placeholder { color: #888; }
 input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #888; }
 
-
-.subscribe button, 
+.subscribe button,
 .contact-form button {
 	height: 52px;
     margin: 0;
@@ -64,6 +63,15 @@ input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placehold
     -ms-transition: all .3s;
     transition: all .3s;
 }
+
+/* Dropdown checkboxes */
+.subscribe .form-group button {
+
+    background: #999;
+
+}
+
+
 
 .subscribe button:hover, 
 .contact-form button:hover {
@@ -97,3 +105,17 @@ input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placehold
 	background: #eee;
     color: #888;
 }
+
+/* Fixes the dropdown checkboxes */
+
+
+/*.form-inline .multiselect-container label.checkbox,
+.form-inline .multiselect-container label.radio{
+    padding: 3px 20px 3px 40px;
+}
+.form-inline .multiselect-container li a label.checkbox input[type="checkbox"],
+.form-inline .multiselect-container li a label.radio input[type="radio"]{
+    margin-left: -20px;
+    margin-right: 0px;
+} 
+*/

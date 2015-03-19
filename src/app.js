@@ -72,17 +72,36 @@ app.get("/", function(req, res) {
 // Route for the subscription-form submission
 app.post("/process-subscription", function(req, res) {
     // TODO Save data to database and/or do other processing here
-    var success = false;
+    var success = false,
+        userArray = req.body.multiselect,
+        isAsthmatic = false,
+        isRelative = false,
+        isInvestor = false,
+        i = 0;
 
     // Add subscriber to the database if the email is valid
     if (isValidEmail(req.body.email)) {
         success = true;
+
+        // process the checkboxes
+        if ((typeof userArray) !== "undefined") {
+            while (i < userArray.length) {
+                if (userArray[i] === "1")
+                    isAsthmatic = true;
+                else if (userArray[i] === "2")
+                    isRelative = true;
+                else
+                    isInvestor = true;
+                i++;
+            }
+        }
+
         new Subscriber({
             email: req.body.email,
             date: new Date(),
-            asthmatic: true, // TODO: checkboxes
-            relative: false,
-            investor: false
+            asthmatic: isAsthmatic,
+            relative: isRelative,
+            investor: isInvestor
         }).save();
     }
 

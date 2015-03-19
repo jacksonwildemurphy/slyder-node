@@ -152,6 +152,22 @@ jQuery(document).ready(function () {
     /*
         Subscription form
     */
+    //$('select').removeClass(
+    
+    
+    $('#multiple-selection').multiselect({
+            nonSelectedText: 'I am a...',
+            buttonWidth: '140px',
+            //buttonContainer: '<div class="multiselect-container" />'
+        });
+    
+        $('#multiple-selection2').multiselect({
+            nonSelectedText: 'I am a...',
+            buttonWidth: '140px',
+            //buttonContainer: '<div class="multiselect-container" />'
+        });
+    
+    
     $('.success-message').hide();
     $('.error-message').hide();
 
