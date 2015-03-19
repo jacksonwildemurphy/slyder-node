@@ -19,14 +19,19 @@ jQuery(document).ready(function () {
         if (element_class == 'menu-top') {
             scroll_to = $(".coming-soon").offset().top;
         } else if (element_class == 'menu-subscribe') {
+            mixpanel.track("navbar subscribe");
             scroll_to = $(".subscribe").offset().top - nav_height - 60;
         } else if (element_class == 'menu-project') {
+            mixpanel.track("navbar product");
             scroll_to = $(".about").offset().top - nav_height - 60;
         } else if (element_class == 'menu-testimonials') {
+            mixpanel.track("navbar testimonials");
             scroll_to = $(".testimonials").offset().top - nav_height - 60;
         } else if (element_class == 'menu-about-us') {
+            mixpanel.track("navbar about-us");
             scroll_to = $(".whos-behind").offset().top - nav_height - 60;
         } else if (element_class == 'menu-contact') {
+            mixpanel.track("navbar contact");
             scroll_to = $(".contact").offset().top - nav_height - 60;
         }
 
@@ -70,8 +75,9 @@ jQuery(document).ready(function () {
     */
        
     var videoPlayer = $('#videoPlayer');
-    $('.btnPlay').click(function () {
+    $('.btnPlay').click(function () { 
         if (videoPlayer[0].paused) {
+            mixpanel.track("Video play");
             videoPlayer[0].play();
             $('.glyphicon-play').attr('class', 'glyphicon glyphicon-pause');
         } else {
@@ -101,6 +107,7 @@ jQuery(document).ready(function () {
     });
 
     $('.btnFullscreen').on('click', function() {
+        mixpanel.track("Full screen video");
         videoPlayer[0].webkitEnterFullscreen();
         videoPlayer[0].mozRequestFullScreen();
         return false;
