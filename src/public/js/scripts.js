@@ -60,7 +60,7 @@ jQuery(document).ready(function () {
     */
     //$('.coming-soon').backstretch("img/backgrounds/slc-splash.png");
 
-    $('.jumbotron').backstretch("img/backgrounds/steel-gray.jpg");
+    $('.youTube').backstretch("img/backgrounds/steel-gray.jpg");
     
     $('.about-container').backstretch("img/backgrounds/light_blue.jpg");
     
@@ -73,6 +73,18 @@ jQuery(document).ready(function () {
     /*
         Video Player
     */
+    
+    // Tracking video plays with Mixpanel
+    /**var hasPlayed = false;
+    $(.embed-responsive-item).click(function(){
+        if (hasPlayed === false){
+            mixpanel.track("youTube video play");
+            hasPlayed = true;
+        }
+    });
+    **/
+                                    
+    /***  For now, we'll use the YouTube video player instead of the custom player
        
     var videoPlayer = $('#videoPlayer');
     $('.btnPlay').click(function () { 
@@ -113,7 +125,7 @@ jQuery(document).ready(function () {
         return false;
         });
 
-
+***/
     
     
     /*
