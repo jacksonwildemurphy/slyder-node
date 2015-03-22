@@ -4,6 +4,7 @@ jQuery(document).ready(function () {
 	    Top menu
     */
 
+    
     // Makes the navbar visible once the site loads. Ideally, the navbar would just be static, but
     // this bootstrap theme originally had a hide/show navbar feature. I chose to use this work-around
     // so that the theme's navigation scrolling can still be used as-is. 
@@ -202,7 +203,7 @@ jQuery(document).ready(function () {
                 if (data.success == 0) {
                     $('.success-message').hide();
                     $('.error-message').hide();
-                    $('.error-message').html('Oops! There was a problem... Please try again.');
+                    $('.error-message').html('Oops! There was a problem... Please enter a valid email.');
                     $('.error-message').fadeIn();
                 } else {
                     $('.error-message').hide();
@@ -210,6 +211,7 @@ jQuery(document).ready(function () {
                     $('.subscribe form').hide();
                     $('.success-message').html('Thank you!');
                     $('.success-message').fadeIn();
+                    mixpanel.track("new subscriber");
                 }
             }
         });

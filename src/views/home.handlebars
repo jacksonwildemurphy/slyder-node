@@ -128,7 +128,8 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1SUzcDUERLo?feature=player_detailpage"></iframe>
+                    <!--TODO: add origin param to url (see youtube API) -->
+                    <iframe id="videoplayer" class="embed-responsive-item" src="https://www.youtube.com/embed/1SUzcDUERLo?enablejsapi=1"></iframe>
                 </div>
             </div>
         </div>
@@ -376,6 +377,7 @@
             </div>
         </div>
     </div>
+        
 
     <!-- Footer -->
     <footer>
@@ -401,9 +403,58 @@
             </div>
         </div>
     </footer>
+    
+    <!-- YouTube analytics -->
+  <!--  <script>  
+     // This code loads the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // This function creates a YouTube player after the API code downloads.
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+        alert("Hey");
+        player = new YT.Player('videoplayer', {
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    // The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+        // Do nothing after the player loads.
+    }
+
+    // The API calls this function when the player's state changes. For our
+    // analytics, we'll track play percentage and completion percentage.
+    // Multiple plays will only be counted if the video is watched in its
+    // entirety.
+
+    var hasBeenPlayed = false;
+
+    function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !hasBeenPlayed) {
+            mixpanel.track("video started");
+            hasBeenPlayed = true;
+        }
+
+        if (event.data == YT.PlayerState.ENDED) {
+            mixpanel.track("video finished");
+            // We'll count a replay only after the video was first finished
+            hasBeenPlayed = false;
+        }
+    }
+    </script> -->
 
 
     <!-- JavaScript -->
+    <script src="js/youtube.js"></script>
     <script src="js/jquery-1.11.1.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="vendor/bootstrap-multiselect/bs-multiselect.js"></script>
@@ -412,6 +463,8 @@
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="js/jquery.ui.map.min.js"></script>
     <script src="js/scripts.js"></script>
+    
+    
 
     <!--[if lt IE 10]>
             <script src="js/placeholder.js"></script>
