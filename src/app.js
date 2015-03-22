@@ -76,6 +76,7 @@ app.post("/process-subscription", function(req, res) {
         userArray = req.body.multiselect,
         isAsthmatic = false,
         isRelative = false,
+        isMedProfessional = false,
         isInvestor = false,
         i = 0;
 
@@ -90,6 +91,8 @@ app.post("/process-subscription", function(req, res) {
                     isAsthmatic = true;
                 else if (userArray[i] === "2")
                     isRelative = true;
+                else if (userArray[i] === "3")
+                    isMedProfessional = true;
                 else
                     isInvestor = true;
                 i++;
@@ -101,6 +104,7 @@ app.post("/process-subscription", function(req, res) {
             date: new Date(),
             asthmatic: isAsthmatic,
             relative: isRelative,
+            medProfessional: isMedProfessional,
             investor: isInvestor
         }).save();
     }

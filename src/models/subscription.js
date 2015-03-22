@@ -7,6 +7,7 @@ var subscriberSchema = mongoose.Schema({
     date: Date,
     asthmatic: Boolean,
     relative: Boolean,
+    medProfessional: Boolean,
     investor: Boolean
 });
 
