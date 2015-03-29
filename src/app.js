@@ -14,7 +14,7 @@ app.set("port", process.env.PORT || 31472); // Webfaction port
 // add a helper for section views.
 var handlebars = require('express3-handlebars')
     .create({
-        defaultLayout: 'main',
+        defaultLayout: __dirname + '/views/layouts/main',
         helpers: {
             section: function(name, options) {
                 if (!this._sections) this._sections = {};
