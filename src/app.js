@@ -24,6 +24,8 @@ var handlebars = require('express3-handlebars')
         }
     });
 app.engine('handlebars', handlebars.engine);
+
+app.set('views', __dirname + '/views');
 app.set('view engine', 'handlebars');
 
 
@@ -51,12 +53,6 @@ switch (app.get("env")) {
 // Import database models
 var Subscriber = require("./models/subscription.js");
 
-// Test: Adding a sample subscriber to the database
-
-
-console.log("Success");
-console.log(isValidEmail("jackson@st.com"));
-
 
 // Add the 'static' middleware
 app.use(express.static(__dirname + '/public'));
@@ -70,7 +66,7 @@ app.use(require("body-parser")());
 
 // Route to the home page
 app.get("/", function(req, res) {
-    res.render("home.handlebars");
+    res.render("home");
 });
 
 // Route for the subscription-form submission
