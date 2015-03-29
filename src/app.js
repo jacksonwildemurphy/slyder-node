@@ -4,7 +4,7 @@ var express = require("express");
 var app = express();
 var credentials = require("./credentials.js");
 var isValidEmail = require("./lib/validate-email.js");
-app.set("port", process.env.PORT || 3000);
+app.set("port", process.env.PORT || 31472); // Webfaction port
 
 
 // Set up the handlebars view engine, set the layout to main.handlebars, and
