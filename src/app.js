@@ -4,6 +4,9 @@ var express = require("express");
 var app = express();
 var credentials = require("./credentials.js");
 var isValidEmail = require("./lib/validate-email.js");
+
+app.set("env", "production");
+
 app.set("port", process.env.PORT || 31472); // Webfaction port
 
 
@@ -52,6 +55,7 @@ var Subscriber = require("./models/subscription.js");
 
 
 console.log("Success");
+console.log(isValidEmail("jackson@st.com"));
 
 
 // Add the 'static' middleware
@@ -66,7 +70,7 @@ app.use(require("body-parser")());
 
 // Route to the home page
 app.get("/", function(req, res) {
-    res.render("home");
+    res.render("home.handlebars");
 });
 
 // Route for the subscription-form submission
