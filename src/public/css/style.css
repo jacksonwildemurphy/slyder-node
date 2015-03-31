@@ -479,7 +479,7 @@ header {
 
     margin-top: 30px;
 
-    padding: 0 120px;
+    padding: 0 20px;
 
     font-size: 22px;
 
@@ -566,6 +566,8 @@ header {
     transition: all .3s;
 
 }
+
+
 
 /***** Testimonials *****/
 
@@ -701,7 +703,7 @@ header {
 
     margin-top: 30px;
 
-    padding: 0 120px;
+    padding: 0 20px;
 
     font-size: 22px;
 
@@ -847,6 +849,8 @@ header {
 
 }
 
+/*.row .whos-behind */
+
 
 
 /***** How to contact us *****/
@@ -875,7 +879,7 @@ header {
 
     margin-top: 30px;
 
-    padding: 0 120px;
+    padding: 0 20px;
 
     font-size: 22px;
 
